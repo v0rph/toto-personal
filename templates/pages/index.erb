@@ -5,15 +5,17 @@
       <header>
         <h1><a href="<%= article.path %>"><%= article.title %></a></h1>
         <span class="date"><%= article.date %></span>
-        <span class="tags">
-          <%= Karakuri::tag_link_list(article[:tags])  %>
-        </span><% 10.times { %>&nbsp;<%}%>
       </header>
 
       <section class="content">
         <%= article.summary %>
       </section>
-      <div class="more"><a href="<%= article.path %>">read on &raquo;</a></div>
+      <span class="tags">
+        <%= Karakuri::tag_link_list(article[:tags])  %>
+      </span><% 10.times { %>&nbsp;<%}%>
+      <div class="more">
+        <a href="<%= article.path %>">read on &raquo;</a>
+      </div>
     </article>
   <% end %>
 </section>

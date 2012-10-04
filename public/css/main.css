@@ -33,6 +33,7 @@ div#header {
   margin-top: 10px;
   margin-left: auto;
   margin-right: auto;
+  margin-bottom: 30px;
 }
 #nav li{
   display: inline;

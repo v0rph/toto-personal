@@ -7,12 +7,33 @@
     <title><%= title %></title>
   </head>
   <body>
-    <section>
-      <%= yield %> 
-    </section>
-    <footer>
-      powered by <a href="http://cloudhead.io/toto">toto</a>
-    </footer>
+    <div id=header>
+      
+    </div>
+    <div id=nav>
+      <ul>
+        <li <%= ' class="active"' if @path == 'index' %>>
+          <a href="/">Home</a>
+        </li>
+        <li <%= ' class="active"' if @path == 'archive' %>>
+          <a href="/archives">Archives</a>
+        </li>
+        <li>
+          <a href="/#blog" >Blog</a>
+        </li>
+        <li <%= ' class="active"' if @path == 'about' %>>
+          <a href="/about">About</a>
+        </li>
+      </ul>
+    </div>
+    <div id=content>
+      <section>
+        <%= yield %> 
+      </section>
+      <footer>
+        powered by <a href="http://cloudhead.io/toto">toto</a>
+      </footer>
+    </div> 
   </body>
 </html>
 

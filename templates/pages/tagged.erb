@@ -2,13 +2,15 @@
   require 'karakuri'
   desired_tag = Karakuri::desired_tag(env["QUERY_STRING"])
 %>
-<h1>Posts filed under '<%= desired_tag %>': </h1>
-<ul>
-
-<% Karakuri::desired_articles(@articles, desired_tag).each do |article| %>
-  <li>
-    <span class="descr"><a href="<%= article.path %>" alt="<%= article.title %>"><%= article.title %></a><br/></span>
-  </li>
-<% end %>
-</ul>
-<br/>
+<section id="archives">
+  <h1>Tagged Posts</h1> 
+  <p>Posts filed under '<%= desired_tag %>': </p>
+  <ul>
+  <% Karakuri::desired_articles(@articles, desired_tag).each do |article| %>
+    <li>
+      <span class="descr"><a href="<%= article.path %>" alt="<%= article.title %>"><%= article.title %></a><br/></span>
+    </li>
+  <% end %>
+  </ul>
+  <br/>
+</section>

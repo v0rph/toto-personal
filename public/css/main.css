@@ -70,7 +70,7 @@ div#header {
 #hello {
   float: right;
   min-width: 320px;
-  max-width: 450px;
+  max-width: 500px;
   background: rgba(252, 235, 182, 0.53);
 }
 #hello h1 {
@@ -78,8 +78,9 @@ div#header {
   margin-left: auto;
   font-size: 50px;
 }
-#hello p{
-  font-size: 20px;
+#hello p {
+  font-size: 18px;
+  margin-bottom: 0.5em;
 }
 
 

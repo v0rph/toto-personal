@@ -1,4 +1,3 @@
-
 require 'toto'
 
 # Rack config
@@ -19,7 +18,7 @@ toto = Toto::Server.new do
   # 
    set :author,    ENV['USER']                               # blog author
   # set :title,     Dir.pwd.split('/').last                   # site title
-   set :title,      'blog'
+   set :title,      'Hugo Marinho'
   # set :root,      "index"                                   # page to load on /
   # set :date,      lambda {|now| now.strftime("%d/%m/%Y") }  # date format for articles
   # set :markdown,  :smart                                    # use markdown + smart-mode

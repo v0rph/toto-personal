@@ -1,7 +1,7 @@
 <div id="landing">
   <section id="hello">
     <h1>Hugo Marinho</h1>
-    <p>Nam quis nibh non purus malesuada mattis nec ac nunc. In a nisl at quam semper elementum. Praesent egestas massa et eros ornare vel auctor neque varius. Suspendisse ut velit ut erat mollis tempor. Ut eu libero vel velit rutrum dapibus. Mauris elit ligula, rutrum eget dictum a, dapibus vitae mi. Nulla nec pellentesque nisi. Fusce felis orci, fringilla nec volutpat ut, congue nec diam.</p>
+    <p>I'm a developer from Portugal Nam quis nibh non purus malesuada mattis nec ac nunc. In a nisl at quam semper elementum. Praesent egestas massa et eros ornare vel auctor neque varius. Suspendisse ut velit ut erat mollis tempor. Ut eu libero vel velit rutrum dapibus. Mauris elit ligula, rutrum eget dictum a, dapibus vitae mi. Nulla nec pellentesque nisi. Fusce felis orci, fringilla nec volutpat ut, congue nec diam.</p>
   </section>
 </div>
 
@@ -24,10 +24,10 @@
       </section>
       <span class="tags">
         <%= Karakuri::tag_link_list(article[:tags])  %>
-      </span><% 10.times { %>&nbsp;<%}%>
-      <div class="upper">
-        <a href="#header" alt="Back to Top">Λ</a>
-      </div>
+      </span><% 10.times { %><%}%>
+      <section class="upper">
+        <a href="#" alt="Back to Top">Λ</a>
+      </section>
       <div class="more">
         <a href="<%= article.path %>">read on &raquo;</a>
       </div>
@@ -37,5 +37,6 @@
 
 <section id="archives">
   <%= archives[3..-1] %>
+  <a href="/archives">all posts »</a>
 </section>
 

@@ -1,11 +1,12 @@
-<h1><%= @path %></h1>
-<ul>
-  <% if archives.length > 0 %>
-    <% for entry in archives %>
-      <li>
-        <a href="<%= entry.path %>"><%= entry.title %></a>
-      </li>
+<section id="archives">
+  <h1><%= @path.capitalize if @path %></h1>
+  <ul>
+    <% if archives.length > 0 %>
+      <% for entry in archives %>
+        <li>
+          <a href="<%= entry.path %>"><%= entry.title %></a>
+        </li>
+      <% end %>
     <% end %>
-  <% end %>
-</ul>
-
+  </ul>
+</section>

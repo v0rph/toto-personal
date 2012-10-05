@@ -1,23 +1,17 @@
 <div id="landing">
-  <section id="hello" style="
-    float: right;
-    margin-right: 15%;
-    margin-left: 50%;">
-    <h1 style="
-    text-align: right;
-    margin-left: auto;">Hugo Marinho</h1>
-    <p style="
-    font-size: 20px;">Nam quis nibh non purus malesuada mattis nec ac nunc. In a nisl at quam semper elementum. Praesent egestas massa et eros ornare vel auctor neque varius. Suspendisse ut velit ut erat mollis tempor. Ut eu libero vel velit rutrum dapibus. Mauris elit ligula, rutrum eget dictum a, dapibus vitae mi. Nulla nec pellentesque nisi. Fusce felis orci, fringilla nec volutpat ut, congue nec diam.</p>
+  <section id="hello">
+    <h1>Hugo Marinho</h1>
+    <p>Nam quis nibh non purus malesuada mattis nec ac nunc. In a nisl at quam semper elementum. Praesent egestas massa et eros ornare vel auctor neque varius. Suspendisse ut velit ut erat mollis tempor. Ut eu libero vel velit rutrum dapibus. Mauris elit ligula, rutrum eget dictum a, dapibus vitae mi. Nulla nec pellentesque nisi. Fusce felis orci, fringilla nec volutpat ut, congue nec diam.</p>
   </section>
 </div>
 
 <section id="articles">
   <% require 'karakuri' %>
-  <div id="blog">
-  </div>
-  <div id="title">
+  <section id="blog">
+  </section>
+  <section id="title">
     <h1>Blog</h1>
-  </div>
+  </section>
   <% for article in articles[0...3] %>
     <article class="post">
       <header>

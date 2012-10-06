@@ -68,10 +68,11 @@ div#header {
 }
 
 #hello {
+  padding: 20px;
   float: right;
   min-width: 320px;
   max-width: 500px;
-  background: rgba(252, 235, 182, 0.53);
+  background: rgba(252, 235, 182, 0.90);
 }
 #hello h1 {
   text-align: left;

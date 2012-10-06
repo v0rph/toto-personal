@@ -115,12 +115,15 @@ div#landing {
   margin-bottom: 3em;
   padding-top: 2em;
 }
-#title h1{
+#title h1 {
   font-size: 60px;
   color: #5E412F;
 }
 
-
+.upper img {
+  margin-top: 30px;
+  margin-left: 50px;
+}
 div#content .post {
   margin-left: auto;
   margin-right: auto;

@@ -72,7 +72,7 @@ div#header {
   float: right;
   min-width: 320px;
   max-width: 500px;
-  background: rgba(252, 235, 182, 0.90);
+  background: rgba(252, 235, 182, 0.50);
 }
 #hello h1 {
   text-align: left;

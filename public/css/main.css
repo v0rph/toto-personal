@@ -121,9 +121,13 @@ div#landing {
   color: #5E412F;
 }
 
+#arrow {
+  float:right;
+}
 .upper img {
+  float:right; 
   margin-top: 30px;
-  margin-left: 50px;
+  margin-right: 50px;
 }
 div#content .post {
   margin-left: auto;

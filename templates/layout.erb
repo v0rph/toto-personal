@@ -30,6 +30,7 @@
     </script>
   </head>
   <body>
+    <div class="wrapper">
     <div id=header>
       
     </div>
@@ -52,10 +53,12 @@
         </li>
       </ul>
     </div>
-    <div id=content>
       <section>
         <%= yield %> 
       </section>
+    <div class="push"></div>
+    </div>
+    <div class="footer">
       <footer>
         powered by <a href="http://cloudhead.io/toto">toto</a>
       </footer>

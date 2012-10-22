@@ -1,8 +1,0 @@
---- 
-title: First Post
-author: Hugo
-date: 27/09/2012
-slug: first-post
-
-Once upon a time...
-

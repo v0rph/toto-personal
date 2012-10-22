@@ -1,7 +1,0 @@
---- 
-title: Post, The Third
-date: 05/10/2012
-tags: rock on, tests
-
-here we go again
-

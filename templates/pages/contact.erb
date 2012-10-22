@@ -1,0 +1,27 @@
+<section id="archives">
+  <% require 'open-uri' %>
+  <% req = Rack::Request.new(env)
+     req.post?
+     verify = req.params["verify"]
+     session = req.params["session"]
+     message = req.params["message"]
+     email = req.params["mail"]
+  %>
+  <h1>Contact</h1>
+  <%= "Sent!" if (open("http://captchator.com/captcha/check_answer/#{session}/#{verify}").read.to_i.nonzero? rescue false) == 1 %> 
+  <% 
+    @captcha_session ||= rand(9000) + 1000
+   %>
+  <section class="container">
+    <form>
+      Name:<br><input type="text" name="name"><br>
+      Email:<br><input type="text" name="mail"><br>
+      <textarea rows="10" cols="30" name="message"></textarea><br>
+      <img src="http://captchator.com/captcha/image/<%= @captcha_session %>" style="float: right;"/><br>
+      Type the text shown to the right: <input type="text" name="verify"><br>
+      <input type="hidden" name="session" value="<%= @captcha_session.to_s %>">
+      <p class="submit"><input type="submit" value="Send"></p>
+    </form>
+  </section>
+  <p></p>
+</section>

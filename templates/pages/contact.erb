@@ -27,7 +27,7 @@
                :authentication => :plain,
                :domain => "HELO",
              },
-               :subject => 'Contact from hugomarinho.com' , :body => message )   
+             :subject => 'Contact from'+email , :body => name +'\n::' + message)   
              "<center><p class=\"notifysuccess\">Thank you for your contact!</p></center>"
            rescue
              "<center><p class=\"notifyfail\">Error while sending. Please try again later.</p></center>"

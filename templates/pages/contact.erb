@@ -7,7 +7,7 @@
      session = req.params["session"]
      message = req.params["message"]
      email = req.params["mail"]
-    
+     name = req.name["name"]
      
   %>
   <h1>Contact</h1>
@@ -19,15 +19,15 @@
           if(open("http://captchator.com/captcha/check_answer/#{session}/#{verify}").read.to_i.nonzero? rescue false) == 1       
             begin
               Pony.mail(:to => 'xxx', :via => :smtp, :via_options => {
-               :address => 'xxx',
+               :address => 'smtp.sendgrid.net',
                :port => '587',
-               :enable_starttls_auto => false,
-               :user_name => 'xxx',
-               :password => 'xxx',
+               :domain => 'heroku.com',
+               :user_name => ENV['SENDGRID_USERNAME'],
+               :password => ENV['SENDGRID_PASSWORD'],
                :authentication => :plain,
-               :domain => "HELO",
-             },
-             :subject => '#{Name} submited new contact from #{email}' , :body => message)   
+               :enable_starttls_auto => true
+              },
+             :subject => '#{name} submited new contact from #{email}' , :body => message)   
              "<center><p class=\"notifysuccess\">Thank you for your contact!</p></center>"
            rescue
              "<center><p class=\"notifyfail\">The contact service is currently down. Please try again later.</p></center>"

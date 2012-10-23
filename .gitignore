@@ -2,3 +2,7 @@
 *.swp
 *.swo
 *.swn
+
+#templat
+templates/pages/contact.erb
+

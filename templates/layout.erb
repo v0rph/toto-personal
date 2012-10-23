@@ -28,6 +28,15 @@
               });
             });
     </script>
+    <script language="javascript" type="text/javascript">
+      function limitText(limitField, limitCount, limitNum) {
+        if (limitField.value.length > limitNum) {
+          limitField.value = limitField.value.substring(0, limitNum);
+        } else {
+	    limitCount.value = limitNum - limitField.value.length;
+          }
+      }
+    </script>
   </head>
   <body>
     <div class="wrapper">
@@ -42,14 +51,14 @@
         <li <%= ' class="active"' if @path == 'index' %>>
           <a href="/">Home</a>
         </li>
-        <li <%= ' class="active"' if @path == 'archive' %>>
-          <a href="/archives">Archives</a>
-        </li>
         <li id="down">
           <a href="/#blog" >Blog</a>
         </li>
-        <li <%= ' class="active"' if @path == 'work' %>>
-          <a href="/work">Work</a>
+        <li <%= ' class="active"' if @path == 'archive' %>>
+          <a href="/archives">Archives</a>
+        </li>
+        <li <%= ' class="active"' if @path == 'contact' %>>
+          <a href="/contact">Contact</a>
         </li>
       </ul>
     </div>

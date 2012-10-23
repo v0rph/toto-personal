@@ -268,6 +268,7 @@ body > header {
   text-decoration: underline;
 }
 
+
 .container {
   display: block;
   width: 500px;
@@ -276,6 +277,9 @@ body > header {
   clear: both;
 }
 
+.container p{
+  margin-bottom:10px;
+}
 .container input{
   width: 40%;
   clear: both;
@@ -296,9 +300,18 @@ body > header {
   width: 100px;
 }
 
-label{
-  
+.container .notifyfail, .notifysuccess{
+  font-size: 15px; 
 }
+.notifyfail{
+  color: #E01E1E;
+}
+
+.notifysuccess{
+  color: #529B22;
+}
+
+
 
 input, textarea{
   color: #5E412F;
@@ -310,9 +323,9 @@ input, textarea{
 
 textarea { 
   resize: none;
-  width:300px !important; 
-  min-width:300px !important; 
-  max-width:300px !important; 
+  width:500px !important; 
+  min-width:500px !important; 
+  max-width:500px !important; 
   height:100px !important; 
   min-height:100px !important; 
   max-height:100px !important; 

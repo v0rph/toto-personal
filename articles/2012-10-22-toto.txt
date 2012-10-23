@@ -5,13 +5,16 @@ tags: website, toto, ruby
 
 I finally made the decision to create my own blog.
 
-Some friends sujested [Octopress](http://octopress.org/) saying it was quite solid and matured. Then I realised what really made me want to setup my own blog. I wanted to get really donw in it, not just a generic wordpress + template. I wanted to learn new things and kinda start from the ground up. So octopress was ditched and plain [Jekyll](https://github.com/mojombo/jekyll) became the candidate. But not for long.
+Some friends sujested [Octopress](http://octopress.org/), saying it was a solid ruby solution. Then I realised what really made me want to setup my own blog. I wanted to get really down in it, not just a generic wordpress + template. I wanted to learn new things and kinda start from the ground up. So octopress was ditched and plain [Jekyll](https://github.com/mojombo/jekyll) became the candidate. But not for long.
 
 Enter [toto](http://cloudhead.io/toto), the tiniest blogging engine in Oz!(tm)
 
 The setup was amazingly fast. I bought the domain, forked the [dorothy](https://github.com/cloudhead/dorothy) base template from github, connected to my heroku account and before I knew it I had a simple working blog.
 
-Login? Content Management? GIT. That's it really! 
-Everything is managed through git. Posts are saved in plain text files. They are written in markdown and follow a simple form, dividing title, date and other metadata from the content. This last part is really cool as it lets you customize what you want. For instance, something simple you can do that is missing is adding tags to posts. This provides great learning value.
+Login? Content Management? 
 
-To me what stands out is that whether you're the hands-on type, who likes to tinker with everything or someone learning web development wanting to build quickly from the ground up, with toto there's something for everyone.
+GIT. 
+That's it really! Everything is managed through git. Posts are saved in plain text files. They are written in markdown and follow a simple form, dividing title, date and other metadata from the content. This last part is really cool as it lets you customize what you want. For instance, something simple you can do that is missing is adding tags to posts. This provides great learning value.
+
+To me what stands out is that whether you're the hands-on type, who likes to tinker with everything, or someone learning web development and wanting to build quickly from the ground up, with toto there's something for everyone.
+

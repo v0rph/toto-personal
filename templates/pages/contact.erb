@@ -30,7 +30,7 @@
              :subject => '#{Name} submited new contact from #{email}' , :body => message)   
              "<center><p class=\"notifysuccess\">Thank you for your contact!</p></center>"
            rescue
-             "<center><p class=\"notifyfail\">Error while sending. Please try again later.</p></center>"
+             "<center><p class=\"notifyfail\">The contact service is currently down. Please try again later.</p></center>"
            end
            else
              "<center><p class=\"notifyfail\">Verification failed.</p></center>"

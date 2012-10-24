@@ -2,7 +2,7 @@
   require 'karakuri'
   desired_tag = Karakuri::desired_tag(env["QUERY_STRING"])
 %>
-<section id="archives">
+<section class="archives">
   <h1>Tagged Posts</h1> 
   <p>Posts filed under '<%= desired_tag %>': </p>
   <ul>

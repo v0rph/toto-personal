@@ -166,13 +166,13 @@ div#header {
   color: #b53131;
 }
 
-#archives{
+.archives{
   margin-left: auto;
   margin-right: auto;
   max-width: 720px;
   min-width: 320px;
 }
-#archives h1 {
+.archives h1 {
   text-align: center;
   display: block;
   font-size: 60px;
@@ -341,7 +341,6 @@ textarea {
 h1, h2, h3, h4 {
   display: inline;
   margin: 0;
-/*  font-weight: 600; */
 }
 ul, li {
   list-style-type: none;

@@ -15,7 +15,6 @@
     </span>
   </section>
 </div>
-
 <section id="articles">
   <% require 'karakuri' %>
   <section id="blog">
@@ -32,7 +31,6 @@
         <h1><a href="<%= article.path %>"><%= article.title %></a></h1>
         <span class="date"><%= article.date %></span>
       </header>
-
       <section class="content">
         <%= article.summary %>
       </section>
@@ -48,7 +46,6 @@
     </article>
   <% end %>
 </section>
-
 <section class="archives">
   <%= archives[3..-1] %>
   <a href="/archives">all posts »</a>

@@ -318,7 +318,13 @@ body > header {
   color: #529B22;
 }
 
+.container img{
+  float: right;
+}
 
+.smalltext {
+  font-size: 10px;
+}
 
 input, textarea{
   color: #5E412F;

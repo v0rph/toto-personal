@@ -16,6 +16,7 @@ toto = Toto::Server.new do
   # Add your settings here
   # set [:setting], [value]
   # 
+  # set :karakuri,  true
    set :author,    ENV['USER']                               # blog author
   # set :title,     Dir.pwd.split('/').last                   # site title
    set :title,      'Hugo Marinho'

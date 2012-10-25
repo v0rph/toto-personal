@@ -1,4 +1,3 @@
-<% require 'karakuri' %>
 <div id="landing">
   <section id="hello">
     <h1>Hugo Marinho</h1>
@@ -34,9 +33,12 @@
       <section class="content">
         <%= article.summary %>
       </section>
+      <% if config[:karakuri] %>      
+        <% require 'karakuri' %>
       <span class="tags">
         <%= Karakuri::tag_link_list(article[:tags])  %>
       </span><% 10.times { }%>
+      <% end %>
       <section class="upper">
         <a href="#" title="Back to Top">Λ</a>
       </section>

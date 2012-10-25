@@ -8,7 +8,7 @@
   <ul>
   <% Karakuri::desired_articles(@articles, desired_tag).each do |article| %>
     <li>
-      <span class="descr"><a href="<%= article.path %>" alt="<%= article.title %>"><%= article.title %></a><br/></span>
+      <span class="descr"><a href="<%= article.path %>" title="<%= article.title %>"><%= article.title %></a><br/></span>
     </li>
   <% end %>
   </ul>

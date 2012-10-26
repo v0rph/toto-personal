@@ -1,13 +1,45 @@
-@import url(http://fonts.googleapis.com/css?family=Droid+Sans);
-@import url(http://fonts.googleapis.com/css?family=Lobster);
 @import url("/css/reset.css");
+
+
+@font-face {
+    font-family: 'DroidSansRegular';
+    src: url('/fonts/DroidSans-webfont.eot');
+    src: url('/fonts/DroidSans-webfont.eot?#iefix') format('embedded-opentype'),
+         url('/fonts/DroidSans-webfont.ttf') format('truetype'),
+         url('/fonts/DroidSans-webfont.svg#DroidSansRegular') format('svg');
+    font-weight: normal;
+    font-style: normal;
+
+}
+
+@font-face {
+    font-family: 'DroidSansBold';
+    src: url('/fonts/DroidSans-Bold-webfont.eot');
+    src: url('/fonts/DroidSans-Bold-webfont.eot?#iefix') format('embedded-opentype'),
+         url('/fonts/DroidSans-Bold-webfont.ttf') format('truetype'),
+         url('/fonts/DroidSans-Bold-webfont.svg#DroidSansBold') format('svg');
+    font-weight: normal;
+    font-style: normal;
+
+}
+
+@font-face {
+    font-family: 'Lobster13Regular';
+    src: url('/fonts/Lobster_1.3-webfont.eot');
+    src: url('/fonts/Lobster_1.3-webfont.eot?#iefix') format('embedded-opentype'),
+         url('/fonts/Lobster_1.3-webfont.ttf') format('truetype'),
+         url('/fonts/Lobster_1.3-webfont.svg#Lobster13Regular') format('svg');
+    font-weight: normal;
+    font-style: normal;
+
+}
 
 html {
   height: 100%;
 }
 body {
   margin: 0 auto;
-  font-family: "Droid Sans" , sans-serif;
+  font-family: "DroidSansRegular" , sans-serif;
   font-size: 20px;
   background-color: #FCEBB6;
   min-width: 320px;
@@ -25,7 +57,7 @@ div#header {
 
 #nav {
   height: 60px;
-  font-family: "Lobster";
+  font-family: "Lobster13Regular";
   color: #5E412F;
   text-decoration: none;
   font-size: 30px;
@@ -67,7 +99,7 @@ div#header {
 }
 
 #nav li a {
-  font-family: "Lobster";
+  font-family: "Lobster13Regular";
   text-decoration: none;
   font-size: 30px;
   
@@ -203,13 +235,13 @@ a {
 h1 { 
   color: #5E412F;
   font-size: 30px;
-  font-family: "Lobster";
+  font-family: "Lobster13Regular";
 }
 
 h1 a {
   color: #5E412F;
   text-decoration: none;
-  font-family: "Lobster";
+  font-family: "Lobster13Regular";
 }
 a:hover {
   text-decoration: underline;
@@ -246,7 +278,7 @@ body > header > h1 {
   
   color: #5E412F;
   font-size: 30px;
-  font-family: "Droid Sans";
+  font-family: "DroidSansRegular";
   font-weight: bold;
 }
 .post .more {
@@ -328,7 +360,7 @@ body > header {
 
 input, textarea{
   color: #5E412F;
-  font-family: "Droid Sans";
+  font-family: "DroidSansRegular";
   background-color: #FFF7CD;
   border: 0px solid gray; 
   border-radius: 5px;

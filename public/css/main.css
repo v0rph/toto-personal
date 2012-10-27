@@ -1,13 +1,13 @@
 @import url("/css/reset.css");
-@import url(http://fonts.googleapis.com/css?family=Lobster|Ubuntu);
+@import url(http://fonts.googleapis.com/css?family=Lobster|Droid+Sans);
 
 html {
   height: 100%;
 }
 body {
   margin: 0 auto;
-  font-family: "Ubuntu" , sans-serif;
-  font-size: 20px;
+  font-family: "Droid Sans" , sans-serif;
+  font-size: 18px;
   background-color: #FCEBB6;
   min-width: 320px;
   height: 100%;
@@ -245,7 +245,7 @@ body > header > h1 {
   
   color: #5E412F;
   font-size: 30px;
-  font-family: "Ubuntu";
+  font-family: "Droid Sans";
   font-weight: bold;
 }
 .post .more {
@@ -327,7 +327,7 @@ body > header {
 
 input, textarea{
   color: #5E412F;
-  font-family: "Ubuntu";
+  font-family: "Droid Sans";
   background-color: #FFF7CD;
   border: 0px solid gray; 
   border-radius: 5px;

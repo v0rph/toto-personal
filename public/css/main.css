@@ -3,10 +3,10 @@
 
 @font-face {
     font-family: 'DroidSansRegular';
-    src: url('/fonts/DroidSans.eot');
-    src: url('/fonts/DroidSans.eot?#iefix') format('embedded-opentype'),
-         url('/fonts/DroidSans.ttf') format('truetype'),
-         url('/fonts/DroidSans.svg#DroidSansRegular') format('svg');
+    src: url('/images/DroidSans.eot');
+    src: url('/images/DroidSans.eot?#iefix') format('embedded-opentype'),
+         url('/images/DroidSans.ttf') format('truetype'),
+         url('/images/DroidSans.svg#DroidSansRegular') format('svg');
     font-weight: normal;
     font-style: normal;
 
@@ -15,10 +15,10 @@
 
 @font-face {
     font-family: 'Lobster13Regular';
-    src: url('/fonts/Lobster.eot');
-    src: url('/fonts/Lobster.eot?#iefix') format('embedded-opentype'),
-         url('/fonts/Lobster.ttf') format('truetype'),
-         url('/fonts/Lobster.svg#Lobster13Regular') format('svg');
+    src: url('/images/Lobster.eot');
+    src: url('/images/Lobster.eot?#iefix') format('embedded-opentype'),
+         url('/images/Lobster.ttf') format('truetype'),
+         url('/images/Lobster.svg#Lobster13Regular') format('svg');
     font-weight: normal;
     font-style: normal;
 

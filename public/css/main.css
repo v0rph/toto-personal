@@ -16,6 +16,19 @@ header, nav, footer, section, article, archives {
   display: block;
 }
 
+#dsq-content h3{
+            display:none;
+}
+#dsq-pagination{
+            display:none;
+}
+#dsq-sort-by{
+            display:none;
+}
+.dsq-global-toolbar-right{
+            display:none;
+}
+
 div#header {
   background-image: url('/images/pattern2.png');
   background-repeat: repeat-x;

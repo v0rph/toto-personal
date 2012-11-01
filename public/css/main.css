@@ -28,7 +28,9 @@ header, nav, footer, section, article, archives {
 .dsq-global-toolbar-right{
             display:none;
 }
-
+.dsq-dislike-thread{
+            display:none;
+}
 div#header {
   background-image: url('/images/pattern2.png');
   background-repeat: repeat-x;

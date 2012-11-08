@@ -193,6 +193,10 @@ div#header {
   font-size: 50px;
   margin-bottom: 30px;
 }
+
+.archives p{
+  line-height:30px;
+}
 .date {
   font-style: italic;
   float: right;

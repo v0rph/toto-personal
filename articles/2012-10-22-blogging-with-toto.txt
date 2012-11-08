@@ -1,5 +1,5 @@
 --- 
-title: Toto
+title: Blogging with Toto
 date: 22/10/2012
 tags: website, toto, ruby, blog
 

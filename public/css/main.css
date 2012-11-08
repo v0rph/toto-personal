@@ -409,10 +409,10 @@ blockquote {
   min-height: 100%;
   height: auto !important;
   height: 100%;
-  margin: 0 auto -70px;
+  margin: 0 auto -74px;
 }
 .footer, .push {
-  height: 70px;
+  height: 74px;
 }
 
 footer {

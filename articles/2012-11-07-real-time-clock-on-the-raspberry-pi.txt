@@ -3,7 +3,7 @@ title: Real Time Clock on the Raspberry pi
 date: 07/11/2012
 tags: raspberry pi, rtc, howto
 
-The Raspberry pi is an amazing device with an amazing price tag. But that also means some compromises have to be made. And one of the most notorious is the lack of a real time clock module.  
+The [Raspberry pi](http://en.wikipedia.org/wiki/Raspberry_Pi) is an amazing device with an amazing price tag. But that also means some compromises have to be made. And one of the most notorious is the lack of a real time clock module.  
 Should you turn off the device, the next time you boot, the time will be all wrong. The regular way to maintain system time on the pi is via ntp, connecting to a server on the internet and syncing from there. Of course this assumes the device has access to an internet connection everytime it reboots. ~
 
 There are some simple software alternatives (**fake-hwclock** for instance) that attempt to maintain some sync by saving the current time to file and then resuming it on boot, thus reducing the error or preventing it from going back in time to the '70s!  

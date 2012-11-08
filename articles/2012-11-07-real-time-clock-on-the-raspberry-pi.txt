@@ -1,0 +1,68 @@
+--- 
+title: Real Time Clock on the Raspberry pi
+date: 07/11/2012
+tags: raspberry pi, rtc, howto
+
+The Raspberry pi is an amazing device with an amazing price tag. But that also means some compromises have to be made. And one of the most notorious is the lack of a real time clock module.  
+Should you turn off the device, the next time you boot, the time will be all wrong. The regular way to maintain system time on the pi is via ntp, connecting to a server on the internet and syncing from there. Of course this assumes the device has access to an internet connection everytime it reboots. ~
+
+There are some simple software alternatives (**fake-hwclock** for instance) that attempt to maintain some sync by saving the current time to file and then resuming it on boot, thus reducing the error or preventing it from going back in time to the 70's!  
+This may not be a problem for some, but for my projects I really needed an accurate clock without the assurance of an internet connection.
+
+Fortunately there are a number of hardware solutions out there, ranging from usb gps devices to actual RTC modules that you can plug right on the pi's connectors.
+
+Part of what makes the Raspberry great is assembling your own components, breadboard in one hand, soldering iron in the other. You can find a great tutorial at [adafruit](http://learn.adafruit.com/adding-a-real-time-clock-to-raspberry-pi/) on the more technical side of assembling and connecting your own.  
+
+For this How-to I'm using an RTC module I purchased from **CJE Micro's / 4D**. It sells for **£10** (plus postage) and you can find it [here](http://www.cjemicros.co.uk/micros/individual/newprodpages/prodinfo.php?prodcode=4D-RaspberryPi-RealTimeClock-RTC). 
+
+<img src="http://www.cjemicros.co.uk/micros/individual/prodimages/4D-RaspberryPi-RealTimeClock-RTC[1].jpeg" alt="RTC" style="display:block; margin-left:auto; margin-right:auto; padding: 20px"/>
+
+Assembly was easy and it came with some simple instructions. All you have to do is plug it in the first 6 GPIO pins, as seen on the picture below:
+
+<img src="/images/pi-rtc.jpg" alt="pi with RTC" style="display:block; margin-left:auto; margin-right:auto; padding: 20px" />
+
+As you can see, it fits quite nicely and doesn't take up much space. Plus, it sits a bit lower than the tallest component (the usb module).
+
+The pi is currently running **Raspbian wheezy**. It seems the kernel 3.2 or above already includes the required drivers.  
+First we must install i2c-tools:
+    sudo apt-get install I2c-tools
+    sudo modprobe i2c-dev
+    sudo modprobe i2c-bcm2708
+This specific RTC is a ds1338, which is supported by the ds1307 driver. We load it with:
+    sudo modprobe ds1307
+We can run a check on the devices currently connected:  
+    sudo i2cdetect -y 0
+A "68" should indicate that your RTC is connected correctly  
+    pi@raspberrypi ~ $ sudo i2cdetect -y 0
+         0  1  2  3  4  5  6  7  8  9  a  b  c  d  e  f
+    00:           -- -- -- -- -- -- -- -- -- -- -- -- -- 
+    10: -- -- -- -- -- -- -- -- -- -- -- -- -- -- -- -- 
+    20: -- -- -- -- -- -- -- -- -- -- -- -- -- -- -- -- 
+    30: -- -- -- -- -- -- -- -- -- -- -- -- -- -- -- -- 
+    40: -- -- -- -- -- -- -- -- -- -- -- -- -- -- -- -- 
+    50: -- -- -- -- -- -- -- -- -- -- -- -- -- -- -- -- 
+    60: -- -- -- -- -- -- -- -- 68 -- -- -- -- -- -- -- 
+    70: -- -- -- -- -- -- -- -- 
+Now we must create the new device with the correct address. To do that we must open a root shell:  
+    sudo bash
+    echo ds1307 0x68 > /sys/class/i2c-adapter/i2c-0/new_device
+    exit
+and then, fingers crossed (not actually a requirement!):  
+    sudo hwclock -r
+If all goes well this should output a fancy line with system time as read from your newly mounted RTC  
+    pi@raspberrypi ~ $ sudo hwclock -r
+    Thu Nov  8 14:15:36 2012  -0.335125 seconds
+It may be off but you can sync it with ntp by running:  
+    sudo ntpd -qg
+Finally, to ensure that all the modules are loaded at boot:  
+    sudo vim /etc/modules
+we add the following lines:   
+    i2c-dev
+    i2c-bcm2708
+    rtc-ds1307
+and to ensure that the device is created at boot:
+    sudo vim /etc/rc.local
+we add the following line before **'exit 0'** :
+    echo ds1307 0x68 > /sys/class/i2c-adapter/i2c-0/new_device
+
+So the next time you boot, it should have the correct time.

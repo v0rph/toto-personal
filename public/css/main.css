@@ -7,7 +7,7 @@ html {
 body {
   margin: 0 auto;
   font-family: "Droid Sans" , sans-serif;
-  font-size: 18px;
+  font-size: 15px;
   background-color: #FCEBB6;
   min-width: 320px;
   height: 100%;
@@ -101,6 +101,7 @@ div#header {
   font-size: 50px;
 }
 #hello p {
+  text-align: justify;
   font-size: 18px;
   margin-bottom: 0.5em;
   height: 100%;
@@ -143,7 +144,7 @@ div#header {
   padding-top: 2em;
 }
 #title h1 {
-  font-size: 60px;
+  font-size: 50px;
   color: #5E412F;
 }
 
@@ -189,7 +190,7 @@ div#header {
 .archives h1 {
   text-align: center;
   display: block;
-  font-size: 60px;
+  font-size: 50px;
   margin-bottom: 30px;
 }
 .date {
@@ -253,13 +254,13 @@ body > header > h1 {
   border-bottom: 0px;
 }
 .post p {
-  margin: 20px 0;
+  margin: 20px 0px;
 }
 
 .post h1 a {
   
   color: #5E412F;
-  font-size: 30px;
+  font-size: 25px;
   font-family: "Droid Sans";
   font-weight: bold;
 }
@@ -271,6 +272,12 @@ body > header > h1 {
   text-decoration: none;
 }
 .more a:hover { text-decoration: underline }
+
+article h1{
+  font-family: "Droid Sans";
+  font-size: 25px;
+  font-weight: bold;
+}
 body > header {
   display: block;
   padding-top: 30px;
@@ -369,9 +376,11 @@ code {
   display: block;
   font-family: 'Anonymous Pro', 'Bitstream Vera Sans', 'Monaco', Courier, mono;
   background: #FFF7CD;
+  font-size:13px;
+  padding-left: 10px;
 }
 pre {
-  padding: 20px;
+  padding: 10px;
   white-space: pre-wrap; /* css-3 */
   white-space: -moz-pre-wrap !important; /* Mozilla, since 1999 */
   white-space: -pre-wrap; /* Opera 4-6 */
@@ -408,7 +417,7 @@ footer {
   max-width: 720px;
   min-width: 320px;
   font-style: italic;
-  font-size: 18px;
+  font-size: 15px;
   color: #5E412F;
   margin-left: auto;
   margin-right :auto;  

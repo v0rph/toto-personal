@@ -15,7 +15,7 @@ Part of what makes the Raspberry  Pi a fun experience, is assembling your own co
 
 For this tutorial I'm using an RTC module from **CJE Micro's / 4D**. It sells for **£10** (plus postage) and you can find it [here](http://www.cjemicros.co.uk/micros/individual/newprodpages/prodinfo.php?prodcode=4D-RaspberryPi-RealTimeClock-RTC). 
 
-<img src="http://www.cjemicros.co.uk/micros/individual/prodimages/4D-RaspberryPi-RealTimeClock-RTC[1].jpeg" alt="RTC" style="display:block; margin-left:auto; margin-right:auto; padding: 20px"/>
+<img src="http://www.cjemicros.co.uk/micros/individual/prodimages/4D-RaspberryPi-RealTimeClock-RTC[1].jpeg" alt="RTC" style="display:block; margin-left:auto; margin-right:auto; padding: 20px;" />
 
 Assembly was easy and it came with some simple instructions. All you have to do is plug it in the first 6 GPIO pins, as seen on the picture below:
 

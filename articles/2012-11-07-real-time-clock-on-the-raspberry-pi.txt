@@ -13,7 +13,7 @@ Fortunately there are a number of hardware solutions out there, ranging from USB
 
 Part of what makes the Raspberry  Pi a fun experience, is assembling your own components, breadboard in one hand, soldering iron in the other. You can find a great tutorial at [adafruit](http://learn.adafruit.com/adding-a-real-time-clock-to-raspberry-pi/) on the more technical side of assembling and connecting your own, while keeping costs down.  
 
-For this tutorial I'm using an RTC module I purchased from **CJE Micro's / 4D**. It sells for **£10** (plus postage) and you can find it [here](http://www.cjemicros.co.uk/micros/individual/newprodpages/prodinfo.php?prodcode=4D-RaspberryPi-RealTimeClock-RTC). 
+For this tutorial I'm using an RTC module from **CJE Micro's / 4D**. It sells for **£10** (plus postage) and you can find it [here](http://www.cjemicros.co.uk/micros/individual/newprodpages/prodinfo.php?prodcode=4D-RaspberryPi-RealTimeClock-RTC). 
 
 <img src="http://www.cjemicros.co.uk/micros/individual/prodimages/4D-RaspberryPi-RealTimeClock-RTC[1].jpeg" alt="RTC" style="display:block; margin-left:auto; margin-right:auto; padding: 20px"/>
 

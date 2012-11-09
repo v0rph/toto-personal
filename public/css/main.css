@@ -373,7 +373,7 @@ h1, h2, h3, h4 {
   display: inline;
   margin: 0;
 }
-ul, li {
+ul {
   list-style-type: none;
 }
 code {

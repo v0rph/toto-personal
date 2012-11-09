@@ -1,19 +1,19 @@
 --- 
-title: Real Time Clock on the Raspberry pi
+title: Real Time Clock on the Raspberry Pi
 date: 07/11/2012
-tags: raspberry pi, rtc, howto
+tags: raspberry pi, rtc, tutorial
 
-The [Raspberry pi](http://en.wikipedia.org/wiki/Raspberry_Pi) is an amazing device with an amazing price tag. But that also means some compromises have to be made. And one of the most notorious is the lack of a real time clock module.  
+The [Raspberry Pi](http://en.wikipedia.org/wiki/Raspberry_Pi) is an amazing device with an amazing price tag. But that also means some compromises have to be made. And one of the most notorious is the lack of a real time clock module.  
 Should you turn off the device, the next time you boot, the time will be all wrong. The regular way to maintain system time on the pi is via ntp, connecting to a server on the internet and syncing from there. Of course this assumes the device has access to an internet connection everytime it reboots. ~
 
 There are some simple software alternatives (**fake-hwclock** for instance) that attempt to maintain some sync by saving the current time to file and then resuming it on boot, thus reducing the error or preventing it from going back in time to the '70s!  
 This may not be a problem for some, but for my projects I really needed an accurate clock without the assurance of an internet connection.
 
-Fortunately there are a number of hardware solutions out there, ranging from USB GPS devices to actual RTC modules that you can plug right on the pi's connectors.
+Fortunately there are a number of hardware solutions out there, ranging from USB GPS devices to actual RTC modules that you can plug right on the Pi's connectors.
 
-Part of what makes the Raspberry great is assembling your own components, breadboard in one hand, soldering iron in the other. You can find a great tutorial at [adafruit](http://learn.adafruit.com/adding-a-real-time-clock-to-raspberry-pi/) on the more technical side of assembling and connecting your own.  
+Part of what makes the Raspberry  Pi a fun experience, is assembling your own components, breadboard in one hand, soldering iron in the other. You can find a great tutorial at [adafruit](http://learn.adafruit.com/adding-a-real-time-clock-to-raspberry-pi/) on the more technical side of assembling and connecting your own, while keeping costs down.  
 
-For this How to, I'm using an RTC module I purchased from **CJE Micro's / 4D**. It sells for **£10** (plus postage) and you can find it [here](http://www.cjemicros.co.uk/micros/individual/newprodpages/prodinfo.php?prodcode=4D-RaspberryPi-RealTimeClock-RTC). 
+For this tutorial I'm using an RTC module I purchased from **CJE Micro's / 4D**. It sells for **£10** (plus postage) and you can find it [here](http://www.cjemicros.co.uk/micros/individual/newprodpages/prodinfo.php?prodcode=4D-RaspberryPi-RealTimeClock-RTC). 
 
 <img src="http://www.cjemicros.co.uk/micros/individual/prodimages/4D-RaspberryPi-RealTimeClock-RTC[1].jpeg" alt="RTC" style="display:block; margin-left:auto; margin-right:auto; padding: 20px"/>
 
@@ -54,15 +54,15 @@ If all goes well this should output a fancy line with system time as read from y
     Thu Nov  8 14:15:36 2012  -0.335125 seconds
 It may be off but you can sync it with ntp by running:  
     sudo ntpd -qg
-Finally, to ensure that all the modules are loaded at boot:  
+Finally, once we get everything working, we must ensure that all the modules are loaded at boot. We edit **/etc/modules**:  
     sudo vim /etc/modules
 we add the following lines:   
     i2c-dev
     i2c-bcm2708
     rtc-ds1307
-and to ensure that the device is created at boot:
+And to ensure that the device is created at boot and the time is set from the RTC, we edit **/etc/rc.local** :
     sudo vim /etc/rc.local
-we add the following line before **'exit 0'** :
+and add the following lines before **'exit 0'** :
     echo ds1307 0x68 > /sys/class/i2c-adapter/i2c-0/new_device
-
+    hwclock -s
 The next time you boot, it should have the correct time.

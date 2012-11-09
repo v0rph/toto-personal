@@ -26,7 +26,7 @@ toto = Toto::Server.new do
   # set [:setting], [value]
   # 
    set :karakuri,  true
-   set :author,    ENV['USER']                               # blog author
+   set :author,    'Hugo Marinho'                               # blog author
   # set :title,     Dir.pwd.split('/').last                   # site title
    set :title,      'Hugo Marinho'
   # set :root,      "index"                                   # page to load on /

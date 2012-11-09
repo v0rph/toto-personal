@@ -1,13 +1,21 @@
 require 'toto'
+require 'rack/rewrite'
 
 # Rack config
 use Rack::Static, :urls => ['/css', '/js', '/images', '/favicon.ico'], :root => 'public'
 use Rack::CommonLogger
 use Rack::Deflater
 
+use Rack::Rewrite do
+  r301 /.*/,  Proc.new {|path, rack_env| "http://#{rack_env['SERVER_NAME'].gsub(/www\./i, '') }#{path}" },
+    :if => Proc.new {|rack_env| rack_env['SERVER_NAME'] =~ /www\./i}
+end
+
 if ENV['RACK_ENV'] == 'development'
   use Rack::ShowExceptions
 end
+
+
 
 #
 # Create and configure a toto instance

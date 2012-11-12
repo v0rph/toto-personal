@@ -493,7 +493,6 @@ footer {
 }
 @media screen and (max-width:400px){
   #landing {
-    background: none;
     min-height: 320px;
     padding:0px;
     padding-top: 20px;
@@ -514,8 +513,7 @@ footer {
     font-size: 30px;
   }
   #hello p {
-    font-size: 18px;
-    line-height: 20px;
+    text-align: left;
   }
   #nav {
     margin-left:auto;

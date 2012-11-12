@@ -487,6 +487,9 @@ footer {
   .submit input{
     width: 100px;
   }
+  .post header {
+  margin-top: 50px; 
+  }
 }
 @media screen and (max-width:400px){
   #landing {

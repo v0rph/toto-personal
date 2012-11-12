@@ -430,8 +430,8 @@ footer {
     padding-top: 0px; 
     height: 100%;
   }
-  #nav h1 {
-/*    line-height: 50px;  */
+  .archives h1 {
+    font-size: 40px;
   }
   #logo {
     margin-bottom: 10px;
@@ -445,16 +445,15 @@ footer {
     margin-right:auto;
     min-height: 450px;
   }
-  #nav {
-    min-width: 320px;
-    max-width: 320px;
-  }
-  #nav ul {
+
+  #nav ul{
+    mix-width:300px;
+    max-width: 300px; 
     display: block;
-    float: none;
+    float: right;
   }
   #nav ul:before {
-    content: "   ";
+    content: "   "; 
     display: table;
   }
   #nav ul:after{
@@ -465,6 +464,30 @@ footer {
 
 }
 
+@media screen and (max-width:720px){
+  #nav {
+    min-width: 320px;
+    max-width: 320px;
+  } 
+  .archives h1{
+    margin-top: 60px;
+  }
+  .container input {
+    width: 200px;
+  }
+  .container {
+    width: 100%;
+    max-width: 500px;
+  }
+  .container textarea{
+    width: 100% !important;
+    min-width: 320px !important;
+    padding: 0px;
+  }
+  .submit input{
+    width: 100px;
+  }
+}
 @media screen and (max-width:400px){
   #landing {
     background: none;

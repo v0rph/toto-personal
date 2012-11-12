@@ -510,6 +510,9 @@ footer {
     display: table;
     clear:both;
   }
+  .upper img{
+    margin-right: 5px;
+  }
 
 
 

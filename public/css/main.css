@@ -61,6 +61,8 @@ div#header {
 #nav li{
   display: inline;
 }
+
+
 #nav ul {
   text-align: right; 
   margin-right: 50px;
@@ -87,10 +89,11 @@ div#header {
   
 }
 
+
 #hello {
   padding: 20px;
   float: right;
-  min-width: 320px;
+  min-width: 300px;
   max-width: 500px;
   background: rgba(252, 235, 182, 0.50);
   border-radius: 20px;
@@ -396,13 +399,6 @@ blockquote {
   font-style: italic;
 }
 
-/*body > footer {
-  text-align: left;
-  margin-left: 10px;
-  font-style: italic;
-  font-size: 18px;
-  color: #888;
-}*/
 
 /* sticky footer */
 .wrapper {
@@ -426,3 +422,97 @@ footer {
   margin-left: auto;
   margin-right :auto;  
 }
+
+@media screen and (max-width: 820px){
+  #landing {
+    background: url(/images/stained-head.png) no-repeat scroll center;
+    max-height: 720px;
+    padding-top: 0px; 
+    height: 100%;
+  }
+  #nav h1 {
+/*    line-height: 50px;  */
+  }
+  #logo {
+    margin-bottom: 10px;
+  }
+  #hello {
+    padding: 0px;
+    padding-top: 45px;
+    padding-bottom: 30px;
+    float:none;
+    margin-left: auto;
+    margin-right:auto;
+    min-height: 450px;
+  }
+  #nav {
+    min-width: 320px;
+    max-width: 320px;
+  }
+  #nav ul {
+    display: block;
+    float: none;
+  }
+  #nav ul:before {
+    content: "   ";
+    display: table;
+  }
+  #nav ul:after{
+    content: "   ";
+    display: table;
+    clear:both;
+  }
+
+}
+
+@media screen and (max-width:400px){
+  #landing {
+    background: none;
+    min-height: 320px;
+    padding:0px;
+    padding-top: 20px;
+    padding-bottom: 10px;
+     height: 100%;
+  }
+  #hello {
+    padding-left: 5px;
+    padding-right: 5px;
+    margin-top: 0px;
+    padding-top: 20px;
+    min-height: 0px;
+    float:none;
+    margin-left: auto;
+    margin-right:auto;
+  }
+  #hello h1 {
+    font-size: 30px;
+  }
+  #hello p {
+    font-size: 18px;
+    line-height: 20px;
+  }
+  #nav {
+    margin-left:auto;
+    margin-right:auto;
+    max-width: 320px;
+    min-width: 320px;
+  }
+  #nav ul {
+    display: block;
+    float: none;
+  }
+  #nav ul:before {
+    content: "   ";
+    display: table;
+  }
+  #nav ul:after{
+    content: "   ";
+    display: table;
+    clear:both;
+  }
+
+
+
+}
+
+

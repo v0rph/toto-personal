@@ -25,11 +25,11 @@ As you can see, it fits quite nicely and doesn't take up much space. Plus, it si
 
 The pi is currently running **Raspbian wheezy**. It seems kernels 3.2 and above already include the required drivers.  
 First we must install i2c-tools:
-    sudo apt-get install I2c-tools
+    sudo apt-get install i2c-tools
     sudo modprobe i2c-dev
     sudo modprobe i2c-bcm2708
 This specific RTC is a ds1338, which is supported by the ds1307 driver. We load it with:
-    sudo modprobe ds1307
+    sudo modprobe rtc-ds1307
 We can run a check on the devices currently connected:  
     sudo i2cdetect -y 0
 A "68" should indicate that your RTC is connected correctly  

@@ -11,7 +11,7 @@ This may not be a problem for some, but for my projects I really needed an accur
 
 Fortunately there are a number of hardware solutions out there, ranging from USB GPS devices to actual RTC modules that you can plug right on the Pi's connectors.
 
-Part of what makes the Raspberry  Pi a fun experience, is assembling your own components, breadboard in one hand, soldering iron in the other. You can find a great tutorial at [adafruit](http://learn.adafruit.com/adding-a-real-time-clock-to-raspberry-pi/) on the more technical side of assembling and connecting your own, while keeping costs down.  
+Part of what makes the Raspberry  Pi a fun experience, is assembling your own components, be it by breadboard or soldering iron. You can find a great tutorial at [adafruit](http://learn.adafruit.com/adding-a-real-time-clock-to-raspberry-pi/) on the more technical side of assembling and connecting your own, while keeping costs down.  
 
 For this tutorial I'm using an RTC module from **CJE Micro's / 4D**. It sells for **£10** (plus postage) and you can find it [here](http://www.cjemicros.co.uk/micros/individual/newprodpages/prodinfo.php?prodcode=4D-RaspberryPi-RealTimeClock-RTC). 
 

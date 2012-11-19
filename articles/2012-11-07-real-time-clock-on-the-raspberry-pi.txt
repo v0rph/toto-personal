@@ -31,7 +31,7 @@ First we must install i2c-tools:
 This specific RTC is a ds1338, which is supported by the ds1307 driver. We load it with:
     sudo modprobe rtc-ds1307
 We can run a check on the devices currently connected:  
-    sudo i2cdetect -y 0
+    sudo i2cdetect -y 0 (change 0 to 1 if you're using rev2)
 A "68" should indicate that your RTC is connected correctly  
     pi@raspberrypi ~ $ sudo i2cdetect -y 0
          0  1  2  3  4  5  6  7  8  9  a  b  c  d  e  f
@@ -43,7 +43,7 @@ A "68" should indicate that your RTC is connected correctly
     50: -- -- -- -- -- -- -- -- -- -- -- -- -- -- -- -- 
     60: -- -- -- -- -- -- -- -- 68 -- -- -- -- -- -- -- 
     70: -- -- -- -- -- -- -- -- 
-Now we must create the new device with the correct address. To do that we must open a root shell:  
+Now we must create the new device with the correct address. To do that we must open a root shell (change /i2c-0/new_device to i2c-1/new_device if you're using rev2):  
     sudo bash
     echo ds1307 0x68 > /sys/class/i2c-adapter/i2c-0/new_device
     exit
@@ -62,7 +62,7 @@ we add the following lines:
     rtc-ds1307
 And to ensure that the device is created at boot and the time is set from the RTC, we edit **/etc/rc.local** :
     sudo vim /etc/rc.local
-and add the following lines before **'exit 0'** :
+and add the following lines before **'exit 0'** (change /i2c-0/new_device to i2c-1/new_device if you're using rev2):
     echo ds1307 0x68 > /sys/class/i2c-adapter/i2c-0/new_device
     hwclock -s
 The next time you boot, it should have the correct time.

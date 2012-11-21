@@ -23,7 +23,7 @@ Assembly was easy and it came with some simple instructions. All you have to do 
 
 As you can see, it fits quite nicely and doesn't take up much space. Plus, it sits a bit lower than the tallest component (the usb module).
 
-The pi is currently running **Raspbian wheezy**. It seems kernels 3.2 and above already include the required drivers.  
+The pi is currently running **Raspbian Wheezy**. It seems kernels 3.2 and above already include the required drivers.  
 First we must install i2c-tools:
     sudo apt-get install i2c-tools
     sudo modprobe i2c-dev
@@ -43,7 +43,7 @@ A "68" should indicate that your RTC is connected correctly
     50: -- -- -- -- -- -- -- -- -- -- -- -- -- -- -- -- 
     60: -- -- -- -- -- -- -- -- 68 -- -- -- -- -- -- -- 
     70: -- -- -- -- -- -- -- -- 
-Now we must create the new device with the correct address. To do that we must open a root shell (change /i2c-0/new_device to i2c-1/new_device if you're using rev2):  
+Now we must create the new device with the correct address. To do that we must open a root shell (change **/i2c-0/new_device** to **i2c-1/new_device** if you're using rev2):  
     sudo bash
     echo ds1307 0x68 > /sys/class/i2c-adapter/i2c-0/new_device
     exit
@@ -62,7 +62,7 @@ we add the following lines:
     rtc-ds1307
 And to ensure that the device is created at boot and the time is set from the RTC, we edit **/etc/rc.local** :
     sudo vim /etc/rc.local
-and add the following lines before **'exit 0'** (change /i2c-0/new_device to i2c-1/new_device if you're using rev2):
+and add the following lines before **'exit 0'** (change **/i2c-0/new_device** to **i2c-1/new_device** if you're using rev2):
     echo ds1307 0x68 > /sys/class/i2c-adapter/i2c-0/new_device
     hwclock -s
 The next time you boot, it should have the correct time.

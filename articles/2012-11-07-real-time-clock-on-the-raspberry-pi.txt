@@ -17,7 +17,7 @@ For this tutorial I'm using an RTC module from **CJE Micro's / 4D**. It sells fo
 
 <img src="http://www.cjemicros.co.uk/micros/individual/prodimages/4D-RaspberryPi-RealTimeClock-RTC%5B1%5D.jpeg" alt="RTC" style="display:block; margin-left:auto; margin-right:auto; padding: 20px;" />
 
-Assembly was easy and it came with some simple instructions. All you have to do is plug it in the first 6 GPIO pins, as seen on the picture below:
+Assembly was easy and it came with some simple instructions. All you have to do is plug it in the first 6 GPIO pins, as seen in the picture below:
 
 <img src="/images/pi-rtc.jpg" alt="pi with RTC" style="display:block; margin-left:auto; margin-right:auto; padding: 20px" />
 
@@ -57,7 +57,6 @@ It may be off but you can sync it with ntp by running:
 Finally, once we get everything working, we must ensure that all the modules are loaded at boot. We edit **/etc/modules**:  
     sudo vim /etc/modules
 we add the following lines:   
-    i2c-dev
     i2c-bcm2708
     rtc-ds1307
 And to ensure that the device is created at boot and the time is set from the RTC, we edit **/etc/rc.local** :

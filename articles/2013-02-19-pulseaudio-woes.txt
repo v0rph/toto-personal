@@ -4,44 +4,42 @@ date: 19/02/2013
 tags: pulseaudio, soundblaster, skype, ubuntu
 
 
-The main computer over at my parents' is a **Pentium 4** and it sports a **Soundblaster AWE 32** as well as an onboard chip.
-
-The computer was slow as hell running on **Windows XP**. It had been infected with malware, so I decided to go the extra mile and get rid of windows altogether and install **Ubuntu 12.04**. 
+The computer over at my parents' is a **Pentium 4** and it sports a **Soundblaster AWE 32** as well as an onboard chip. Suffice to say, the computer was slow as hell running on **Windows XP**. It had been infected with malware, so I decided to go the extra mile and get rid of windows altogether and install **Ubuntu 12.04**.  
 It just makes sense. It fits their normal use, it's a current OS and it runs fast on such 'dated' hardware.
 
 I wasn't even done configuring it when the next day, much to my surprise, my father was already using it, seemingly not even bothered by the odd skipping of the window controls to the left, clock and tray to the top and the misterious disappearance of the long revered 'start' button. Everything he needed was just there on the Unity launcher. Everything but Skype.
 
-Here was my pickle. Audio was fine otherwise but Skype calls were really slow and stuttering. It seems all the mixing is being done on the software level. And you can't do much about it on Skype because when you try to tinker with the audio options it just directs you to pulseaudio.
+So, here was my pickle. Audio was fine otherwise, but Skype calls were really slow and stuttering. It seems all the mixing is being done on the software level. And you can't do much about it on Skype because when you try to tinker with the audio options it just directs you to pulseaudio.
 
 While it does have its shortcomings, removing pulseaudio is a terrible idea. A way to circumvent it is to pause it with:
     pasuspender -- skype
-  This will suspend pulseaudio while the program is running and wait for it to exit to resume. The downside is, well, you wont get audio from anywhere but Skype.
+  This will suspend pulseaudio while the program is running and wait for it to exit to resume. It's good enough if you're planning on making a call when you open Skype. The downside is, well, you wont get audio from anything else.
 
-Another way to go around this is to trick a local instance of pulseaudio just for Skype. Pulseaudio wont run over network, so Skype will default to alsa and give you all available hardware options.
-  This will allow you to specify what device you want for audio input and output separately. 
-  As an example, I set my usb webcam with integrated mic for audio input, and the on-board soundcard for output and ringer. This means is pulseaudio will happily keep on working and use only the SoundBlaster, then we trick it to not run on Skype which will in turn connect with the onboard card and webcam mic directly. Better yet, should there be an incoming call and the system-wide volume low or muted, the ringer will go off on full volume anyway, so we wont miss a call. 
-  It may not be ideal for some, but as they mostly use skype as a telephone anyway, they are in fact expecting incoming calls.
+Another way to go around this is to trick a local instance of pulseaudio just for Skype. Pulseaudio becomes inacessible via network, so Skype will default to alsa and give us all the available hardware options.
+  This will allow you to specify what device you want for audio input and output separately.  
+As an example, I set my usb webcam with integrated mic for audio input, and the on-board soundcard for output and ringer.  
+This means is pulseaudio will happily keep on working and use only the SoundBlaster, then we trick it to not run on Skype which will in turn connect with the onboard card and webcam mic directly. Better yet, should there be an incoming call and the system-wide volume low or muted, the ringer will go off on full volume anyway, so we wont miss a call. 
 
-create an executable file
-    sudo gedit /usr/bin/skype-wrapper
-with the following content:
+It may not be ideal for some, but as they use skype as a telephone anyway, they are in fact expecting incoming calls.
+
+We begin by creating our script:
+    sudo gedit /usr/bin/skype-nopulse
+With the following content:
+    #!/bin/bash
     PULSE_SERVER=127.0.0.1 /usr/bin/skype &
-make it executable
+Finally we change it so it is executable:
     sudo chmod +x /usr/bin/skype-wrapper
 
-don't forget to also change the desktop file so that the new script will be called when opening skype from the launcher:
-edit file /usr/share/applications/skype.desktop
+Don't forget to also change the desktop file so that the new script will be called when opening skype from the launcher:
+We edit the file:
     sudo gedit /usr/share/applications/skype.desktop
-and change
+and change where it reads:
     Exec=skype
-to
-    Exec=skype-wrapper
+to:
+    Exec=skype-nopulse
 
-I have Skype set to startup, we want it to use our wrappe so under **Startup Applications...** I have an entry for it with the command:
-    /usr/bing/skype-wrapper
+I have Skype set to run on startup, so we want it to use our script instead. Under **Startup Applications...** we create an entry for it and set it to run the command:
+    /usr/bin/skype-nopulse
 
-explanation:
-PULSE_SERVER is a way to tell skype to use a pulse instance on a machine other than the local.
-invalid values (e.g. empty string) make skype interrupt the startup and quit - so we give the local adress which is valid but obviously pulse runs at user level so it's not reachable via network, even not on the local machine.
-skype tries to use pulse but cannot reach/connect to it and falls back to alsa.
-the result on ubuntu natty is that pulse continues to work unmodified and skype can be configured to use whatever you want to 
+To undo this, we can simply change back the line we edited in skype.desktop and change our entry in **Startup Applications...** to just "skype" or delete it altogether.
+

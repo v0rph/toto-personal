@@ -50,8 +50,8 @@
     <form id="contact" method="get">
       Name:<br><input type="text" name="name"><br>
       Email:<br><input type="text" name="mail"><br>
-      <textarea rows="10" cols="30" name="message" onkeydown = "limitText(this.form.message,this.form.countdown,300);" onkeyup ="limitText(this.form.message,this.form.countdown,300);"></textarea><br> 
-      <label class="smalltext"><input readonly type="text" name="countdown" size="3" value="300" style="width:30px"> characters left.</label>
+      <textarea rows="10" cols="30" name="message" onkeydown = "limitText(this.form.message,this.form.countdown,500);" onkeyup ="limitText(this.form.message,this.form.countdown,500);"></textarea><br> 
+      <label class="smalltext"><input readonly type="text" name="countdown" size="3" value="500" style="width:30px"> characters left.</label>
       <%= case config[:captchaservice] 
 	  when 'captchator'
 		  "<img src=\"http://captchator.com/captcha/image/#{@captcha_session}\" alt=\"captchator\" /><br>\n

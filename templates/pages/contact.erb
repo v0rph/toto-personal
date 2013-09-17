@@ -28,7 +28,7 @@
     <%= if email 
 		if ((open("http://captchator.com/captcha/check_answer/#{session}/#{verify}").read.to_i.nonzero? rescue false) == 1 ) || ((open("http://easycaptchas.com/check.aspx?sessionid=#{session.to_s}&input=#{verify.to_s}").read) == "TRUE") || (config[:captchaservice] == 'false')
             begin
-              Pony.mail(:to => 'xxx', :via => :smtp, :via_options => {
+              Pony.mail(:from => email, :to => 'xxx', :via => :smtp, :via_options => {
                :address => 'smtp.sendgrid.net',
                :port => '587',
                :domain => 'heroku.com',

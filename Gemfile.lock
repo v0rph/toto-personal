@@ -33,3 +33,9 @@ DEPENDENCIES
   rack-rewrite
   rdiscount
   toto
+
+RUBY VERSION
+   ruby 2.5.3p105
+
+BUNDLED WITH
+   1.17.2

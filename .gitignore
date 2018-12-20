@@ -3,6 +3,10 @@
 *.swo
 *.swn
 
-#templat
+#template
 templates/pages/contact.erb
+
+#rvm
+.ruby-gemset
+.ruby-version
 

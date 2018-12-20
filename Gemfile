@@ -1,4 +1,4 @@
-ruby "1.9.2"
+ruby "2.5.3"
 source 'https://rubygems.org'
 
 gem 'builder'

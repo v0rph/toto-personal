@@ -18,17 +18,17 @@
      message = req.params["message"]
      email = req.params["mail"]
      name = req.params["name"]
-     
+
   %>
   <h1>Contact</h1>
-  <% 
+  <%
     @captcha_session ||= rand(9000) + 1000
    %>
   <section class="container">
-    <%= if email 
+    <%= if email
 		if ((open("http://captchator.com/captcha/check_answer/#{session}/#{verify}").read.to_i.nonzero? rescue false) == 1 ) || ((open("http://easycaptchas.com/check.aspx?sessionid=#{session.to_s}&input=#{verify.to_s}").read) == "TRUE") || (config[:captchaservice] == 'false')
             begin
-              Pony.mail(:from => email, :to => 'xxx', :via => :smtp, :via_options => {
+              Pony.mail(:from => email, :to => ENV['SENDGRID_RECIPIENT'], :via => :smtp, :via_options => {
                :address => 'smtp.sendgrid.net',
                :port => '587',
                :domain => 'heroku.com',
@@ -46,13 +46,13 @@
              "<center><p class=\"notifyfail\">Verification failed.</p></center>"
            end
          end
-    %> 
+    %>
     <form id="contact" method="get">
       Name:<br><input type="text" name="name"><br>
       Email:<br><input type="text" name="mail"><br>
-      <textarea rows="10" cols="30" name="message" onkeydown = "limitText(this.form.message,this.form.countdown,500);" onkeyup ="limitText(this.form.message,this.form.countdown,500);"></textarea><br> 
+      <textarea rows="10" cols="30" name="message" onkeydown = "limitText(this.form.message,this.form.countdown,500);" onkeyup ="limitText(this.form.message,this.form.countdown,500);"></textarea><br>
       <label class="smalltext"><input readonly type="text" name="countdown" size="3" value="500" style="width:30px"> characters left.</label>
-      <%= case config[:captchaservice] 
+      <%= case config[:captchaservice]
 	  when 'captchator'
 		  "<img src=\"http://captchator.com/captcha/image/#{@captcha_session}\" alt=\"captchator\" /><br>\n
                    Type the text shown to the right: <input type=\"text\" name=\"verify\"><br>\n

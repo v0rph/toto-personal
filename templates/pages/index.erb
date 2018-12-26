@@ -14,21 +14,16 @@
     </script>
 
   <section id="hello">
-    <h1>Hugo Marinho</h1>
     <p>
-      I'm a developer from Portugal who started toying with graphic tools and small scale programming early on, then naturally evolving into a passion for web development.
-    </p>
-    <p>
-      Currently I'm finishing my studies at Universidade do Minho. There I met a crazy bunch with whom I helped create <a href="http://www.groupbuddies.com/">Group Buddies</a>, a web development company where I work as a Software Engineer.
-    </p>
-    <p>  
-     I'm an avid practitioner of Taekwondo and whenever I'm by the countryside, I roam the dirt roads on my faithful mountain bike.
+      Senior Backend Developer at <a href="http://www.freeletics.com/">Freeletics</a>
     </p>
     <span>
-      <a href="http://linkedin.com/in/hugompmarinho" ><img src="images/linkedin_brown.png" alt="Linkedin Profile" /></a>
+      <a href="https://github.com/v0rph" ><img src="images/github_brown.png" alt="Github Profile" /></a>
+      <a href="https://linkedin.com/in/hugompmarinho" ><img src="images/linkedin_brown.png" alt="Linkedin Profile" /></a>
     </span>
   </section>
 </div>
+<% unless config[:disable_blog] %>
 <section id="articles">
   <section id="blog">
   </section>
@@ -47,7 +42,7 @@
       <section class="content">
         <%= article.summary %>
       </section>
-      <% if config[:karakuri] %>      
+      <% if config[:karakuri] %>
         <% require 'karakuri' %>
       <span class="tags">
         <%= Karakuri::tag_link_list(article[:tags])  %>
@@ -66,4 +61,5 @@
   <%= archives[3..-1] %>
   <a href="/archives">all posts »</a>
 </section>
+<% end %>
 

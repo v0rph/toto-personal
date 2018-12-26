@@ -34,6 +34,8 @@ toto = Toto::Server.new do
   set :captchaservice, 'false'                          # captcha service (captchator or easycaptcha)
   set :date, lambda {|now| now.strftime("%B #{now.day.ordinal} %Y") }
 
+  set :disable_blog, true
+
   set :to_html, lambda {|path, page, ctx|
     ERB.new(File.read("#{path}/#{page}.erb")).result(ctx)
   }

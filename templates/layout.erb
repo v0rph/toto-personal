@@ -3,9 +3,9 @@
   <head>
     <link rel="stylesheet" type="text/css" href="/css/main.css" />
     <link rel="alternate" type="application/atom+xml" title="<%= title %> - feed" href="/index.xml" />
-    <meta http-equiv="Content-Type" content="text/html; charset=UTF-8" /> 
+    <meta http-equiv="Content-Type" content="text/html; charset=UTF-8" />
     <title><%= title %></title>
-    <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">  
+    <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
     <meta property="og:description" content="<%= title %>"/>
     <meta property="og:title" content="Hugo Marinho" />
     <meta property="og:image" content="http://hugomarinho.com/images/stained-head.png" />
@@ -25,44 +25,44 @@
         document.createElement("section");
         document.createElement("footer");
         document.createElement("article");
-    </script>   
+    </script>
   </head>
   <body>
     <div class="wrapper">
-    <div id=header>
-      
-    </div>
-    <div id=nav>
-      <section id="logo">
-        <a href="http://www.hugomarinho.com"><h1>hugomarinho.com</h1></a>
-      </section>
-      <ul>
-        <li <%= ' class="active"' if @path == 'index' %>>
-          <a href="/">Home</a>
-        </li>
-        <li id="down">
-          <a href="/#blog" >Blog</a>
-        </li>
-        <li <%= ' class="active"' if @path == 'archive' %>>
-          <a href="/archives">Archives</a>
-        </li>
-        <li <%= ' class="active"' if @path == 'contact' %>>
-          <a href="/contact">Contact</a>
-        </li>
-      </ul>
-    </div>
+      <div id=header>
+      </div>
+      <% unless config[:disable_blog] %>
+        <div id=nav>
+          <section id="logo">
+            <a href="http://www.hugomarinho.com"><h1>hugomarinho.com</h1></a>
+          </section>
+          <ul>
+            <li <%= ' class="active"' if @path == 'index' %>>
+              <a href="/">Home</a>
+            </li>
+            <li id="down">
+              <a href="/#blog" >Blog</a>
+            </li>
+            <li <%= ' class="active"' if @path == 'archive' %>>
+              <a href="/archives">Archives</a>
+            </li>
+            <li <%= ' class="active"' if @path == 'contact' %>>
+              <a href="/contact">Contact</a>
+            </li>
+          </ul>
+        </div>
+      <% end %>
       <section>
-        <%= yield %> 
+        <%= yield %>
       </section>
-    <div class="push"></div>
+      <div class="push"></div>
     </div>
     <div class="footer">
       <footer>
-        <p>powered by <a href="http://cloudhead.io/toto">toto</a></p>
         <p>Copyright © 2013 Hugo Marinho</p>
       </footer>
-    </div> 
+    </div>
   </body>
 </html>
-  
+
 

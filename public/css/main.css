@@ -64,7 +64,7 @@ div#header {
 
 
 #nav ul {
-  text-align: right; 
+  text-align: right;
   margin-right: 50px;
 }
 #nav ul:before  {
@@ -77,7 +77,7 @@ div#header {
   font-size: 50px;
 }
 
-#nav li + li:before { 
+#nav li + li:before {
     content: " - ";
     padding: 0 10px;
 }
@@ -86,7 +86,7 @@ div#header {
   font-family: "Lobster";
   text-decoration: none;
   font-size: 30px;
-  
+
 }
 
 
@@ -104,7 +104,7 @@ div#header {
   font-size: 50px;
 }
 #hello p {
-  text-align: justify;
+  text-align: center;
   font-size: 18px;
   margin-bottom: 0.5em;
   height: 100%;
@@ -155,7 +155,7 @@ div#header {
   float:right;
 }
 .upper img {
-  float:right; 
+  float:right;
   margin-top: 30px;
   margin-right: 50px;
 }
@@ -226,7 +226,7 @@ a {
   color: #b83000;
 }
 
-h1 { 
+h1 {
   color: #5E412F;
   font-size: 30px;
   font-family: "Lobster";
@@ -269,7 +269,7 @@ body > header > h1 {
 }
 
 .post h1 a {
-  
+
   color: #5E412F;
   font-size: 25px;
   font-family: "Droid Sans";
@@ -340,7 +340,7 @@ body > header {
 }
 
 .container .notifyfail, .notifysuccess{
-  font-size: 15px; 
+  font-size: 15px;
 }
 .notifyfail{
   color: #E01E1E;
@@ -362,18 +362,18 @@ input, textarea{
   color: #5E412F;
   font-family: "Droid Sans";
   background-color: #FFF7CD;
-  border: 0px solid gray; 
+  border: 0px solid gray;
   border-radius: 5px;
 }
 
-textarea { 
+textarea {
   resize: none;
-  width:500px !important; 
-  min-width:500px !important; 
-  max-width:500px !important; 
-  height:100px !important; 
-  min-height:100px !important; 
-  max-height:100px !important; 
+  width:500px !important;
+  min-width:500px !important;
+  max-width:500px !important;
+  height:100px !important;
+  min-height:100px !important;
+  max-height:100px !important;
 }
 
 h1, h2, h3, h4 {
@@ -417,7 +417,6 @@ blockquote {
 }
 
 footer {
-  padding-top: 40px;
   text-align: left;
   max-width: 720px;
   min-width: 320px;
@@ -425,14 +424,14 @@ footer {
   font-size: 15px;
   color: #5E412F;
   margin-left: auto;
-  margin-right :auto;  
+  margin-right :auto;
 }
 
 @media screen and (max-width: 820px){
   #landing {
     background: url(/images/stained-head.png) no-repeat scroll center;
     max-height: 720px;
-    padding-top: 0px; 
+    padding-top: 0px;
     height: 100%;
   }
   .archives h1 {
@@ -453,12 +452,12 @@ footer {
 
   #nav ul{
     mix-width:300px;
-    max-width: 300px; 
+    max-width: 300px;
     display: block;
     float: right;
   }
   #nav ul:before {
-    content: "   "; 
+    content: "   ";
     display: table;
   }
   #nav ul:after{
@@ -473,7 +472,11 @@ footer {
   #nav {
     min-width: 320px;
     max-width: 320px;
-  } 
+  }
+  #hello {
+    padding-left: 5px;
+    padding-right: 5px;
+  }
   .archives h1{
     margin-top: 60px;
   }
@@ -493,7 +496,7 @@ footer {
     width: 100px;
   }
   .post header {
-  margin-top: 50px; 
+  margin-top: 50px;
   }
 }
 @media screen and (max-width:400px){
@@ -505,8 +508,6 @@ footer {
      height: 100%;
   }
   #hello {
-    padding-left: 5px;
-    padding-right: 5px;
     margin-top: 0px;
     padding-top: 20px;
     min-height: 0px;
@@ -516,9 +517,6 @@ footer {
   }
   #hello h1 {
     font-size: 30px;
-  }
-  #hello p {
-    text-align: left;
   }
   #nav {
     margin-left:auto;

@@ -104,7 +104,7 @@ div#header {
   font-size: 50px;
 }
 #hello p {
-  text-align: center;
+  text-align: left;
   font-size: 18px;
   margin-bottom: 0.5em;
   height: 100%;
@@ -449,7 +449,9 @@ footer {
     margin-right:auto;
     min-height: 450px;
   }
-
+  #hello span{
+    float: none;
+  }
   #nav ul{
     mix-width:300px;
     max-width: 300px;
@@ -465,7 +467,6 @@ footer {
     display: table;
     clear:both;
   }
-
 }
 
 @media screen and (max-width:720px){
@@ -507,17 +508,6 @@ footer {
     padding-bottom: 10px;
      height: 100%;
   }
-  #hello {
-    margin-top: 0px;
-    padding-top: 20px;
-    min-height: 0px;
-    float:none;
-    margin-left: auto;
-    margin-right:auto;
-  }
-  #hello h1 {
-    font-size: 30px;
-  }
   #nav {
     margin-left:auto;
     margin-right:auto;
@@ -540,9 +530,4 @@ footer {
   .upper img{
     margin-right: 5px;
   }
-
-
-
 }
-
-

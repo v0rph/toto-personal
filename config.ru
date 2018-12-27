@@ -15,8 +15,6 @@ if ENV['RACK_ENV'] == 'development'
   use Rack::ShowExceptions
 end
 
-
-
 #
 # Create and configure a toto instance
 #
